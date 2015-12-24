@@ -17,6 +17,7 @@ namespace ModuleTwoAssignment
                     Console.WriteLine(firstRow);
                 else
                     Console.WriteLine(firstRow);
+                    
                 // Ensure next line will be the opposite of the one previously printed
                 Array.Reverse(firstRow);
             }
