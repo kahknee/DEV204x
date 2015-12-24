@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModuleOneAssignment
+{
+    class Program
+    {
+        // First Name	Last Name	Birthdate	Address Line 1	Address Line 2	City	State/Province	Zip/Postal	Country
+        static void Main(string[] args)
+        {
+            // Creating variables of appropriate data type for student
+            string firstName;
+            string lastName;
+            DateTime birthday;
+            string addressLine1;
+            string addressLine2;
+            string city;
+            string stateOrProvince;
+            string zipOrPostal;
+            string country;
+
+            // Assigning set of values for one student 
+            firstName = "Jane";
+            lastName = "Chang";
+            birthday = DateTime.Parse("03 / 02 / 1990");
+            addressLine1 = "123 Main St.";
+            addressLine2 = null;
+            city = "Los Angeles";
+            stateOrProvince = "California";
+            zipOrPostal = "90023";
+            country = "USA";
+
+            // Print values to check
+            Console.WriteLine("{0} {1}:\nDOB: {2}\n{3} {4}\n{5}, {6} {7}, {8}",
+                firstName, lastName, birthday, addressLine1, addressLine2, city, stateOrProvince, zipOrPostal, country);
+
+            Console.ReadLine(); 
+        }
+    }
+}
