@@ -1,0 +1,27 @@
+using System;
+
+namespace Review
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Initializing new char array
+            char[] firstRow = { 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O' };
+
+            // Using nested loop to print total of 8 rows
+            for (int i = 0; i < 8; i++)
+            {
+                // Using if statement to print alternating rows
+                if (firstRow[0] == 'O')
+                    Console.WriteLine(firstRow);
+                else
+                    Console.WriteLine(firstRow);
+                // Ensure next line will be the opposite of the one previously printed
+                Array.Reverse(firstRow);
+            }
+
+            Console.ReadLine(); 
+        }
+    }
+}
