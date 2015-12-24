@@ -1,0 +1,124 @@
+using System;
+
+namespace ModuleThreeAssignment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            GetStudentOrTeacher();
+            GetUProgram();
+            GetDegree();
+            GetCourse();
+            
+            // Calling ValidateBirthday method just to verify it was thrown
+            ValidateBirthday();
+            
+            Console.ReadLine();
+        }
+
+        // Creating separate methods to receive input for Student, Teacher, UProgram, Degree, and Course
+        static void GetStudentOrTeacher()
+        {
+            Console.WriteLine("First name: ");
+            string first = Console.ReadLine();
+            Console.WriteLine("Last name: ");
+            string last = Console.ReadLine();
+            Console.WriteLine("Birthday: ");
+            string birthday = Console.ReadLine();
+            Console.WriteLine("Address Line 1: ");
+            string addressLine1 = Console.ReadLine();
+            Console.WriteLine("Address Line 2: ");
+            string addressLine2 = Console.ReadLine();
+            Console.WriteLine("City: ");
+            string city = Console.ReadLine();
+            Console.WriteLine("State or Province: ");
+            string stateOrProvince = Console.ReadLine();
+            Console.WriteLine("Zip or Postal: ");
+            string zipOrPostal = Console.ReadLine();
+            Console.WriteLine("Country: ");
+            string country = Console.ReadLine();
+
+            PrintStudentOrTeacher(first, last, DateTime.Parse(birthday), addressLine1, addressLine2, city, stateOrProvince, zipOrPostal, country);
+        }
+
+        // Using NotImplementedException
+        static void ValidateBirthday()
+        {
+            // TODO 
+            throw new NotImplementedException();
+        }
+        static void GetUProgram()
+        {
+            Console.WriteLine("Program Name: ");
+            string program = Console.ReadLine();
+            Console.WriteLine("Department Head: ");
+            string department = Console.ReadLine();
+            Console.WriteLine("Degrees: ");
+            string degrees = Console.ReadLine();
+
+            PrintUProgram(program, department, degrees);
+        }
+
+        static void GetDegree()
+        {
+            Console.WriteLine("Degree Name: ");
+            string degreeName = Console.ReadLine();
+            Console.WriteLine("Credits Required: ");
+            int creditsReq = Console.Read();
+
+            PrintDegree(degreeName, creditsReq);
+        }
+
+        static void GetCourse()
+        {
+            Console.WriteLine("Course Name: ");
+            string course = Console.ReadLine();
+            Console.WriteLine("Credits: ");
+            int credits = Console.Read();
+            Console.WriteLine("Duration in weeks: ");
+            int weeks = Console.Read();
+            Console.WriteLine("Teacher Name: ");
+            string teacher = Console.ReadLine();
+
+            PrintCourse(course, credits, weeks, teacher);
+        }
+
+        // Methods to print details 
+        static void PrintStudentOrTeacher(string first, string last, DateTime birthday, string addressLine1,
+            string addressLine2, string city, string stateOrProvince, string zipOrPostal, string country)
+        {
+            Console.WriteLine("Student or Teacher?");
+            string response = Console.ReadLine();
+
+            if (response == "student")
+            {
+                Console.WriteLine("Student {0} {1}:\nDOB: {2}\n{3} {4}\n{5}, {6} {7}, {8}",
+                    first, last, birthday, addressLine1, addressLine2, city, stateOrProvince, zipOrPostal, country);
+            }
+            else
+            {
+                Console.WriteLine("Teacher {0} {1}:\nDOB: {2}\n{3} {4}\n{5}, {6} {7}, {8}",
+                    first, last, birthday, addressLine1, addressLine2, city, stateOrProvince, zipOrPostal, country);
+            }
+        }
+
+        static void PrintUProgram(string program, string department, string degrees)
+        {
+            Console.WriteLine("{0} is under the {1} Program, which offers the {2} degree.",
+                program, department, degrees);
+        }
+
+        static void PrintDegree(string degreeName, int creditsReq)
+        {
+            Console.WriteLine("Required credits to receive a degree in {0}: {1}", degreeName, creditsReq);
+        }
+
+        static void PrintCourse(string course, int credits, int weeks, string teacher)
+        {
+            Console.WriteLine("The {0} course is led by {1} and is {2} weeks long.\nTotal Credits: {3}",
+                course, teacher, weeks, credits);
+        }
+     
+    }
+}
